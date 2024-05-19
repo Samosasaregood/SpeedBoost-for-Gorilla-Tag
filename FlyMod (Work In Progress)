@@ -12,7 +12,7 @@ public class FlyMod : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.F)) // Press 'F' to fly
+        if (ControllerInputPoller.instance.leftGrab)) // Press 'left grip' to fly
         {
             Vector3 flyDirection = new Vector3(0, flySpeed * Time.deltaTime, 0);
             characterController.Move(flyDirection);
