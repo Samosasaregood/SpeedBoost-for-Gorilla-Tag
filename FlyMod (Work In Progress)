@@ -1,0 +1,21 @@
+using UnityEngine;
+
+public class FlyMod : MonoBehaviour
+{
+    private CharacterController characterController;
+    public float flySpeed = 10f;
+
+    void Start()
+    {
+        characterController = GetComponent<CharacterController>();
+    }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.F)) // Press 'F' to fly
+        {
+            Vector3 flyDirection = new Vector3(0, flySpeed * Time.deltaTime, 0);
+            characterController.Move(flyDirection);
+        }
+    }
+}
